@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세부페이지1</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        *{
+            font-family: 'Pretendard';
+        }
+        
+        @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+        .header{
+            width: 100vw;
+            height: 80px;
+            background-color: #fff;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 999;
+        }
+        p { 
+            margin: 0px 0px 0px 0px; line-height: 120%; 
+        }
+        .gnb{
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            justify-content: space-between;
+        }
+        .logo a {
+            margin-left: 64px;
+            text-decoration: none;
+            color: #585858;
+        }
+        .menu-right{
+            display: flex;
+            align-items: center;
+        }
+        .menu-right ul{
+            display: flex;
+            text-decoration: none;
+        }
+        .menu-right li {
+            text-decoration: none;
+            margin-left: 36px;
+            list-style: none;
+        }
+        .menu-right li a{
+            text-decoration: none;
+            font-weight: 400;
+            color: #7F7F7F;
+        }
+        .menu-right li a:hover{
+            color: #33607C;
+        }
+        .menu-left{
+            display: flex;
+            margin-right: 64px;
+            align-items: center;
+        }
+        .menu-button{
+            width: 110px;
+            height: 40px;
+            border-radius: 20px;
+            border: 1px solid #33607C;
+            font-size: 16px;
+            background-color: #fff;
+            margin-right: 24px;
+            color: #33607C;
+        }
+        .menu-button a{
+            text-decoration: none;
+            color: #33607C;
+        }
+        .menu-button:hover{
+            background-color: #33607C;
+            color: #fff;
+            font-weight: 300;
+        }
+        .main{
+            width: 100vw;
+            height: auto;
+            background-color: #ffffff;
+            margin:0;
+            padding-top: 80px;
+        }
+        .main-A{
+            display: grid;
+            grid-template-columns: 0.6fr 1fr 0.4fr 1fr;
+            width: 100vw;
+            height: 520px;
+            background-color: #ffffff;
+            margin-bottom: 140px;
+        }
+        .A-wrap{
+            grid-column-start: 2;
+            grid-column-end: 3;
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .A-title{
+            font-size: 48px;
+            color: #33607C;
+            margin-top: 10;
+            margin-bottom: 24px;
+        }
+        .A-contents{
+            font-size: 16px;
+            color: #474747;
+            line-height: 140%;
+            justify-content: center;
+            margin-right: 150px;
+        }
+        .A-text {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            animation: fade-in 1s forwards;
+        }
+        .A-text button{
+            width: 100px;
+            height: 36px;
+            border-radius: 40px;
+            background-color: #efefef;
+            border: 1px solid #ababab;
+            margin-top: 32px;
+            color: #585858;
+        }
+        .A-text button:hover{
+            background-color: #33607C;
+            color: #E0E0E0;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateX(100%);
+        }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(100%);
+        }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+        }
+        }
+        .main-B{
+            width: 100vw;
+            height: 1160px;
+            background-color: rgb(255, 255, 255);
+            margin-top: 60px;
+            padding-top: 100px;
+        }
+        .B-dropdown{
+            display: flex;
+            flex-direction: row;
+            width: 1047px;
+            justify-content: center;
+        }
+        footer{
+            background-color: #474747;
+            height: 130px;
+            width: 100vw;
+            margin-top: 260px;
+            font-size: 12px;
+            font-weight: 300;
+            color: #E0E0E0;
+            text-align: center;
+            align-items: center;
+            padding-top: 30px;
+            position: relative;
+        }
+        footer p {
+            margin-top: 10px;
+        }
+
+        .B-category{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-left: 12px;
+            border-bottom: 1px solid #bdbdbd;
+            padding-bottom: 18px;
+        }
+        .B-card{
+            width: 331px;
+            height: auto;
+            background-color: #ffffff;
+            box-shadow: 0 6px 12px #E7E7E7;
+        }
+        @media screen and (min-width: 1047px) {
+            .B-category {
+                width: 1047px; 
+                margin: 0 auto;
+        }
+        }
+        .category-choice a {
+            font-size: 16px;
+            color: #7e7e7e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .category-choice a:hover{
+            color: #33607C;
+        }
+        .card-text-wrap{
+            padding: 12px 24px 12px 24px;
+        }
+        .B-card-ui{
+            display: flex;
+            justify-content: center;
+            margin-top: 64px;
+        }
+        .B-card-ui-2{
+            display: flex;
+            justify-content: center;
+            margin-top: 64px;
+        }
+        .B-card{
+            margin-left: 28px;
+            border-radius: 4px;
+        }
+        .B-contents{
+            justify-content: center;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+            border-radius: 2px;
+        }
+
+        .pagination a.active {
+            background-color:#33607C;
+            color: white;
+            border: 1px solid #33607C;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+        <!--네비게이션-->
+    <header class="header">
+        <div class="gnb">
+            <nav class="menu-right">
+                <h1 class="logo">
+                    <a href="./mainpage.html">HAY</a>
+                </h1>
+                <ul>
+                    <li><a href="./subpage1.html">Products</a></li>
+                    <li><a href="./subpage2.html">Details</a></li>
+                    <li><a href="./subpage3.html">Assemble</a></li>
+                </ul>
+            </nav>
+            <div class="menu-left">
+                <a href="#"><button class="menu-button">Contact</button></a>
+                <div class="menu-left-image">
+                <a href="#"><img src="./image/list.png" alt="" width="40px" height="40px"></a>
+            </div>
+        </div>
+    </header>
+
+        <!--컨텐츠-->
+        <div class="main">
+            <section class="main-A">
+                <div class="A-wrap">
+                    <a href="#"><img src="./image/chair06.jpg" alt="" width="580px" height="500px" ></a>
+                    <div class="A-text">
+                        <h1 class="A-title">Chairs</h1>
+                        <p class="A-contents">hay의 의자는 실용적이면서도 인테리어 소품으로 활용하기 좋다 <br> 색감이 좋아 포인트 가구로 사용하기에도 좋으며, 사용하지 않을 <br> 때는 겹겹이 쌓아서 보관이 가능해 공간 활용도가 높다.</p>
+                        <button>제품 더보기</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-B">
+
+                <div class="B-category">
+                    <div class="category-amount">
+                        <p>총 <span style="font-weight: bold; color: #33607C;" >30개</span>의 제품</p>
+                    </div>
+                    <div class="category-choice">
+                        <a href="#">추천순 &nbsp; &nbsp;|</a>
+                        <a href="#">&nbsp; &nbsp;판매인기순 &nbsp; &nbsp;|</a>
+                        <a href="#">&nbsp; &nbsp;낮은가격순 &nbsp; &nbsp;|</a>
+                        <a href="#">&nbsp; &nbsp;높은가격순 &nbsp; &nbsp;</a>
+                    </div>                    
+                    
+                </div>
+            <div class="B-card-ui">
+                <div class="B-card">
+                    <a href="./subpage2.html"><img  onmouseover="mouseover()" onmouseleave="mouseleave()" src="./image/chair07.jpg" id="chair07" alt="" width="331px" height="360px" ></a>
+                    <div class="card-text-wrap">
+                        <p style="color: #FF5847; font-size: 12px;" >NEW</p>
+                        <h1 style="color: #474747; font-size: 18px; margin-top: 4px; margin-bottom: 0; " >13 Eighty Arm Chair </h1>
+                        <p style="color: #7F7F7F; font-size: 12px; margin-top: 6px;" >보기에도 편하고 앉으면 더 편한 체어</p>
+                        <h1 style="color: #2B2B2B; font-size: 24px; margin-top: 8px;" >470,000원</h1>
+                    </div>
+                </div>
+                <div class="B-card" >
+                    <a href="./subpage2.html"><img onmouseover="mouseover()" onmouseleave="mouseleave() "src="./image/chair01.jpg" id="chair01" alt="" width="331px" height="360px" ></a>
+                    <div class="card-text-wrap">
+                        <p style="color: #FF5847; font-size: 12px;" >NEW</p>
+                        <h1 style="color: #474747; font-size: 18px; margin-top: 4px; margin-bottom: 0; " >Rey Chair </h1>
+                        <p style="color: #7F7F7F; font-size: 12px; margin-top: 6px;" >우아하고 모던한 체어</p>
+                        <h1 style="color: #2B2B2B; font-size: 24px; margin-top: 8px;" >920,000원</h1>
+                    </div>
+                </div>
+                <div class="B-card" >
+                    <a href="./subpage2.html"><img onmouseover="mouseover()" onmouseleave="mouseleave() "src="./image/chair02.jpg" id="chair02" alt="" width="331px" height="360px" ></a>
+                    <div class="card-text-wrap">
+                        <p style="color: #FF5847; font-size: 12px;" >NEW</p>
+                        <h1 style="color: #474747; font-size: 18px; margin-top: 4px; margin-bottom: 0; " >Petit Standard Chair</h1>
+                        <p style="color: #7F7F7F; font-size: 12px; margin-top: 6px;" >우아하고 기능적인 스택형 체어</p>
+                        <h1 style="color: #2B2B2B; font-size: 24px; margin-top: 8px;" >600,000원</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="B-card-ui-2">
+                <div class="B-card" >
+                    <a href="./subpage2.html"><img onmouseover="mouseover()" onmouseleave="mouseleave()" src="./image/chair03.jpg" id="chair03" alt="" width="331px" height="360px" ></a>
+                    <div class="card-text-wrap">
+                        <p style="color: #FF5847; font-size: 12px;" >NEW</p>
+                        <h1 style="color: #474747; font-size: 18px; margin-top: 4px; margin-bottom: 0; " >Balcony Armchair </h1>
+                        <p style="color: #7F7F7F; font-size: 12px; margin-top: 6px;" >우아하고 기능적인 아웃도어 체어</p>
+                        <h1 style="color: #2B2B2B; font-size: 24px; margin-top: 8px;" >380,000원</h1>
+                    </div>
+                </div>
+                <div class="B-card">
+                    <a href="./subpage2.html"><img onmouseover="mouseover()" onmouseleave="mouseleave()" src="./image/chair04.jpg" id="chair04" alt="" width="331px" height="360px" ></a>
+                    <div class="card-text-wrap">
+                        <p style="color: #FF5847; font-size: 12px;" >NEW</p>
+                        <h1 style="color: #474747; font-size: 18px; margin-top: 4px; margin-bottom: 0; " >J42 Chair </h1>
+                        <p style="color: #7F7F7F; font-size: 12px; margin-top: 6px;" >우아하고 심플한 원목체어</p>
+                        <h1 style="color: #2B2B2B; font-size: 24px; margin-top: 8px;" >800,000원</h1>
+                    </div>
+                </div>
+                <div class="B-card">
+                    <a href="./subpage2.html"><img onmouseover="mouseover()" onmouseleave="mouseleave()" src="./image/chair05.jpg" id="chair05" alt="" width="331px" height="360px" ></a>
+                    <div class="card-text-wrap">
+                        <p style="color: #FF5847; font-size: 12px;" >NEW</p>
+                        <h1 style="color: #474747; font-size: 18px; margin-top: 4px; margin-bottom: 0; " >Revolt Chair </h1>
+                        <p style="color: #7F7F7F; font-size: 12px; margin-top: 6px;" >시대를 초월한 클래식 체어</p>
+                        <h1 style="color: #2B2B2B; font-size: 24px; margin-top: 8px;" >550,000원</h1>
+                    </div>
+                </div>
+        </div>
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#" class="active">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+          </div>
+            </section>
+        </div>
+
+        <!--푸터-->
+        <footer>
+            ©HAY
+            <br><br> 
+            At HAY, everything we make draws from three primary sources<br> 
+            of inspiration: art, architecture, and fashion. We have always paid close attention<br>
+            to and been inspired by our surroundings<br>
+            <p>HAY ApS&nbsp;&nbsp;|&nbsp;&nbsp;Havnen 1, 8700 Horsens, Denmark&nbsp;&nbsp;|&nbsp;&nbsp;+45 3164 6000&nbsp;&nbsp;|&nbsp;&nbsp;Vat nr 26799945</p>
+        </footer>
+
+        <script src="./js.1.js"></script>
+</body>
+</html>

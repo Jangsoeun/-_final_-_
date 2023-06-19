@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        *{
+            font-family: 'Pretendard';
+        }
+        
+        .header{
+            width: 100vw;
+            height: 80px;
+            background-color: #fff;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 999;
+        }
+        p { 
+            margin: 0px 0px 0px 0px; line-height: 120%; 
+        }
+        .gnb{
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            justify-content: space-between;
+        }
+        .logo a {
+            margin-left: 64px;
+            text-decoration: none;
+            color: #585858;
+        }
+        .menu-right{
+            display: flex;
+            align-items: center;
+        }
+        .menu-right ul{
+            display: flex;
+            text-decoration: none;
+        }
+        .menu-right li {
+            text-decoration: none;
+            margin-left: 36px;
+            list-style: none;
+        }
+        .menu-right li a{
+            text-decoration: none;
+            font-weight: 400;
+            color: #7F7F7F;
+        }
+        .menu-right li a:hover{
+            color: #33607C;
+        }
+        .menu-left{
+            display: flex;
+            margin-right: 64px;
+            align-items: center;
+        }
+        .menu-button{
+            width: 110px;
+            height: 40px;
+            border-radius: 20px;
+            border: 1px solid #33607C;
+            font-size: 16px;
+            background-color: #fff;
+            margin-right: 24px;
+            color: #33607C;
+        }
+        .menu-button a{
+            text-decoration: none;
+            color: #33607C;
+        }
+        .menu-button:hover{
+            background-color: #33607C;
+            color: #fff;
+            font-weight: 300;
+        }
+        .main{
+            width: 100vw;
+            height: auto;
+            background-color: #ffffff;
+            margin:0;
+            padding-top: 80px;
+        }
+        .main-A{
+            width: 100vw;
+            height: 760px;
+            background-color: #fff;
+            text-align: center;
+            align-items: center;
+            margin-top: 30px;
+            padding: 0;
+        }
+        .A-text{
+            width: 375px;
+            height: auto;
+            align-content: center;
+            justify-content: center;
+            padding-bottom: 20px;
+            text-align: center;
+            margin: 0 auto; 
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .A-subtitle{
+            font-size: 36px;
+            color: #474747;
+        }
+        .A-maintitle h2{
+            font-size: 80px;
+            color: #33607C;
+            font-weight: bold;
+            margin-top: -8px;
+            margin-bottom: 20px;
+        }
+        .A-maintitle{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .A-image{
+            width: 100vw;
+            height: 492px;
+            margin-top: 60px;
+            background-color: #474747;
+        }
+        section.main-B {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        section.main-B.fade-in {
+            opacity: 1;
+        }
+        .main-B{
+            width: 100vw;
+            height: 880px;
+            background-color: #fff;
+            margin-top: 40px;
+            margin-left: 0;
+            padding: 0;
+            position: relative;
+            justify-content: center;
+            margin-bottom: 120px;
+        }
+        footer{
+            background-color: #474747;
+            height: 130px;
+            width: 100vw;
+            margin-top: 260px;
+            font-size: 12px;
+            font-weight: 300;
+            color: #E0E0E0;
+            text-align: center;
+            align-items: center;
+            padding-top: 30px;
+            margin: 0;
+        }
+        footer p {
+            margin-top: 10px;
+        }
+
+        #image-container {
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow-x: auto;
+        }
+
+        #image-container img {
+            margin: 0 15px; 
+            width: 276px; 
+            height: 360px; 
+            transition: transform 1s; 
+            border-radius: 4px;
+        }
+
+        #image-container img:nth-child(1),
+        #image-container img:nth-child(5) {
+            margin-top: 60px;
+        }
+
+        #image-container img:nth-child(2),
+        #image-container img:nth-child(4) {
+            margin-top: 30px;
+        }
+
+        #image-container img:nth-child(3) {
+            margin-top: 0;
+        }
+        #image-container img:nth-child(3):hover{
+            transform: scale(1.2);
+        }
+        .B-text{
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-top: 64px;
+        }
+        .B-img{
+            flex-basis: 50%;
+            max-width: 450px;
+            margin: 10px;
+        }
+        .B-button{
+            width: 110px;
+            height: 40px;
+            border-radius: 20px;
+            border: 1px solid #33607C;
+            font-size: 12px;
+            background-color: #fff;
+            margin-right: 24px;
+            color: #33607C;
+            margin-left: 220px;
+        }
+        .B-card{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+        .B-button a{
+            text-decoration: none;
+            color: #33607C;
+        }
+        .B-button:hover{
+            background-color: #33607C;
+            color: #fff;
+            font-weight: 300;
+        }
+        .B-title{
+            font-size: 36px;
+            font-weight: bold;
+            color: #33607C;
+            margin-bottom: 12px;
+        }
+        .B-contents{
+            font-size: 16px;
+            font-weight: 200;
+            color: #474747;
+            line-height: 24px;
+        }
+        figure.B-img figcaption{
+            background-color:  #F8F9FA;
+        }
+        figure{
+            display: flex;
+        }
+        .fig-content{
+            color: #33607C;
+            font-weight: bold;
+        }
+        .fig-title{
+            color: #474747;
+            font-weight: 400;
+        }
+        figure.B-img {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+            width: 450px;
+            height: 600px;
+            color: #ffffff;
+            text-align: left;
+            font-size: 16px;
+            background-color: #000000;
+            margin-top: 60px;
+        }
+
+        figure.B-img * {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+        }
+
+        figure.B-img .snip-img {
+            max-width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+
+        figure.B-img:after,
+        figure.B-img figcaption {
+            position: absolute;
+            top: 502;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        figure.B-img figcaption::after {
+            z-index: 1;
+            padding: 32px;
+            width: 446px;
+            height: 160px;
+            background-color: #F8F9FA;
+            position: absolute;
+        }
+
+        figure.B-img figcaption {
+            position: absolute;
+            width: 418px;
+            height: 160px;
+            margin-left: 16px;
+            margin-bottom: 16px;
+            border-radius: 10px;
+            color: #000000;
+            background-color: transparent; 
+            transition: background-color 0.35s ease;
+            display: flex;
+            box-shadow: 2px ,2px, 8, 0 #B9B9B9;
+        }
+
+        figure.B-img h3,
+        figure.B-img .links {
+            width: 100%;
+            margin: 5px 0;
+            padding: 0;
+        }
+        figure.B-img .fig-img{
+          opacity: 0;
+          margin: 12px;
+          border-radius: 10px;
+        }
+        figure.B-img h3 {
+            line-height: 1.4em;
+            font-weight: 700;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            opacity: 0;
+            margin-top: 30px;
+        }
+
+        figure.B-img .fig-title {
+            font-size: 0.8em;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0;
+            top: 50%;
+            -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        figure.B-img .fig-content {
+            font-size: 1.2em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            opacity: 0;
+            top: 50%;
+            -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+            margin-top: -8px;
+        }
+
+        figure.B-img i {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            padding: 20px 25px;
+            font-size: 34px;
+            opacity: 0;
+            -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+        }
+
+        figure.B-img a {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+        }
+        figure.B-img:hover:after,
+        figure.B-img.hover:after {
+            opacity: 1;
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+        }
+
+        figure.B-img:hover h3,
+        figure.B-img.hover h3,
+        figure.B-img:hover p,
+        figure.B-img.hover p,
+        figure.B-img:hover i,
+        figure.B-img.hover i,
+        figure.B-img:hover .fig-img,
+        figure.B-img.hover .fig-img {
+            -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+        figure.B-img:hover figcaption,
+        figure.B-img.hover figcaption {
+            background-color: #fff;
+        }
+        .main-button{
+            width: 110px;
+            height: 40px;
+            border-radius: 20px;
+            border: 1px solid #ababab;
+            font-size: 16px;
+            background-color: #efefef;
+            margin-right: 24px;
+            color: #585858;
+        }
+        .main-button a{
+            text-decoration: none;
+            color: #33607C;
+        }
+        .main-button:hover{
+            background-color: #33607C;
+            color: #fff;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <!--네비게이션-->
+    <header class="header">
+        <div class="gnb">
+            <nav class="menu-right">
+                <h1 class="logo">
+                    <a href="./mainpage.html">HAY</a>
+                </h1>
+                <ul>
+                    <li><a href="./subpage1.html">Products</a></li>
+                    <li><a href="./subpage2.html">Details</a></li>
+                    <li><a href="./subpage3.html">Assemble</a></li>
+                </ul>
+            </nav>
+            <div class="menu-left">
+                <a href="#"><button class="menu-button">Contact</button></a>
+                <div class="menu-left-image">
+                <a href="#"><img src="./image/list.png" alt="" width="40px" height="40px"></a>
+            </div>
+        </div>
+    </header>
+
+    <!--컨텐츠-->
+    <div class="main">
+    <section class="main-A">
+        <div class="A-text">
+            <p class="A-subtitle">HAY&nbsp&nbsp――&nbsp&nbspPRODUCTS</p>
+            <div class="A-maintitle">
+                <h2>LIGHTING</h2>
+                <a href="./subpage1.html"><button class="main-button">제품보기</button></a>
+            </div>
+        </div>
+        <div id="image-container">
+            <img src="./image/lighting.jpg" alt="Image 1"  data-title="LIGHTING" >
+            <img src="./image/chair.jpg" alt="Image 2" data-title="CHAIR">
+            <img src="./image/coffeetable.jpg" alt="Image 3" data-title="TABLE">
+            <img src="./image/standinglight.jpg" alt="Image 4" data-title="STANDING">
+            <img src="./image/stool.jpg" alt="Image 5" data-title="CHAIR">
+          </div>
+    </section>
+
+    <section class="main-B">
+        <div class="B-text">
+            <div class="B-text-wrap">
+            <p class="B-title">About</p>
+            <p class="B-contents">HAY의 다양한 컨템포러리 체어는 거실, 주방, 사무실을 위한 독특한 디자인을 특징으로 하며, <br>편안함, 기능성 또는 미학에 초점을 맞춥니다.</p>
+            </div>
+            <button class="B-button">더보기</button>
+        </div>
+        <div class="B-card">
+        <figure class="B-img">
+            <img class="snip-img" src="./image/chair04-2.jpg" alt="sample83" />
+            <figcaption>
+              <img class="fig-img" src="./image/chair04.jpg" alt="" width="136px" height="136px">
+              <div class="fig-text">
+                <p class="fig-title">원목 체어</p>
+                <p class="fig-content">J42 Chair</p>
+                <h3>800,000원</h3>
+                <i class="ion-ios-arrow-right"></i>
+              </div>
+            </figcaption>
+            <a href="#"></a>
+        </figure>
+
+        <figure class="B-img">
+            <img class="snip-img" src="./image/chair03-2.jpg" alt="sample83" />
+            <figcaption>
+              <img class="fig-img" src="./image/chair03.jpg" alt="" width="136px" height="136px">
+              <div class="fig-text">
+                <p class="fig-title">아웃도어 체어</p>
+                <p class="fig-content">Balcony Armchair</p>
+                <h3>380,000원</h3>
+                <i class="ion-ios-arrow-right"></i>
+              </div>
+            </figcaption>
+            <a href="#"></a>
+        </figure>
+        </div>
+        
+    </section>
+    </div>
+
+        <!--푸터-->
+        <footer>
+            ©HAY
+            <br><br> 
+            At HAY, everything we make draws from three primary sources<br> 
+            of inspiration: art, architecture, and fashion. We have always paid close attention<br>
+            to and been inspired by our surroundings<br>
+            <p>HAY ApS&nbsp;&nbsp;|&nbsp;&nbsp;Havnen 1, 8700 Horsens, Denmark&nbsp;&nbsp;|&nbsp;&nbsp;+45 3164 6000&nbsp;&nbsp;|&nbsp;&nbsp;Vat nr 26799945</p>
+        </footer>
+    <script src="./js.js">
+    </script>
+</body>
+</html>
+
+</div>

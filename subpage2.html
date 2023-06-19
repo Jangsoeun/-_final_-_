@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>서브페이지2</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        *{
+            font-family: 'Pretendard';
+        }
+        
+        .header{
+            width: 100vw;
+            height: 80px;
+            background-color: #fff;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 999;
+        }
+        p { 
+            margin: 0px 0px 0px 0px; line-height: 120%; 
+        }
+        .gnb{
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            justify-content: space-between;
+        }
+        .logo a {
+            margin-left: 64px;
+            text-decoration: none;
+            color: #585858;
+        }
+        .menu-right{
+            display: flex;
+            align-items: center;
+        }
+        .menu-right ul{
+            display: flex;
+            text-decoration: none;
+        }
+        .menu-right li {
+            text-decoration: none;
+            margin-left: 36px;
+            list-style: none;
+        }
+        .menu-right li a{
+            text-decoration: none;
+            font-weight: 400;
+            color: #7F7F7F;
+        }
+        .menu-right li a:hover{
+            color: #33607C;
+        }
+        .menu-left{
+            display: flex;
+            margin-right: 64px;
+            align-items: center;
+        }
+        .menu-button{
+            width: 110px;
+            height: 40px;
+            border-radius: 20px;
+            border: 1px solid #33607C;
+            font-size: 16px;
+            background-color: #fff;
+            margin-right: 24px;
+            color: #33607C;
+        }
+        .menu-button a{
+            text-decoration: none;
+            color: #33607C;
+        }
+        .menu-button:hover{
+            background-color: #33607C;
+            color: #fff;
+            font-weight: 300;
+        }
+        .main-A{
+            background-color: rgb(255, 255, 255);
+            height: auto;
+            width: 100vw;
+            display: flex;
+            margin-top: 120px;
+            justify-content: center;
+        }
+        .img-detail{
+            margin-right: 8px;
+        }
+        .A-img{
+            width: auto;
+            height: auto;
+        }
+        .A-img-wrap{
+            padding: 3px 3px 3px 3px;
+            width: auto;
+        }
+
+        .A-content{
+            color: #585858;
+            margin-right: 40px;
+        }
+        .A-content h2{
+            margin-bottom: 8px;
+        }
+        .A-text{
+            margin-left: 100px;
+            width: auto;
+        }
+        .A-color ul li{
+            list-style: none;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            flex-direction: row;
+            display: inline-block;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+        .A-color ul{
+            padding-inline-start:0;
+            margin-top: 4px;
+        }
+        .A-color h3{
+            font-size: 16px; 
+            color: #474747; 
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+        .A-color .color3{
+            border: 1px solid #d3d3d3;
+        }
+        .A-amount{
+            position: absolute;
+            align-items: center;
+            position: relative;
+            margin-bottom: 60px;
+        }
+        .A-amount .amount-btn{
+            display: flex;
+            flex-direction: row;
+            width: 104px;
+            border: 1px solid #C1C1C1;
+            border-radius: 4px;
+        }
+        .amount-btn .left-btn{
+            width: 28px;
+            height: 32px;
+            border-radius: 4px 0px 0px 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .amount-btn .right-btn{
+            width: 28px;
+            height: 32px;
+            border-radius: 0px 4px 4px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .amount-btn p{
+            width: 48px;
+            height: 32px;
+            margin: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+        .amount-btn a{
+            text-decoration: none;
+            color: #3d3d3d;
+        }
+        .amount-btn a:hover{
+            text-decoration: none;
+            color: #3d3d3d;
+        }
+        .A-amount h3{
+            font-size: 16px; 
+            color: #474747; 
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+        .btn-text{
+            display: flex;
+            justify-content:space-between;
+            font-weight: bold;
+            color: #474747;
+            margin-bottom: 16px;
+        }
+        .btn{
+            display: flex;
+            width: 136px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: #D8BB86;
+            font-size: 15px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            margin: 0;
+        }
+        .btn1{
+            background-color: #F1F3F5;
+            color: #3d3d3d;
+            transition: all 0.3s ease;
+        }
+        .btn1:hover{
+            background-color: #d1d1d1;
+        }
+        .btn2{
+            background-color: #33607C;
+            transition: all 0.3s ease;
+            margin-left: 12px;
+            color: #fff;
+        }
+        .btn2:hover{
+            background-color: #213a49;
+        }
+        .btn-wrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        .A-icon-stars img{
+            width: 20px;
+            height: 20px;
+        }
+        .B-text .line-size{
+        font-size: 32px;
+        color: #585858;
+        font-weight: bold;
+        position: absolute;
+        top: 25%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s ease-in-out;
+    }
+    .B-text-btn{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .B-text-btn button{
+        width: 100px;
+        height: 40px;
+        align-items: center;
+        border-radius: 20px;
+        border: 1px solid #122B47;
+        color: #122B47;
+    }
+    .B-text-btn button:hover{
+        background-color: #213a49;
+        color: #fff;
+    }
+    .main-B{
+        background-color: rgb(255, 255, 255);
+        height: auto;
+        width: 100vw;
+        display: flex;
+        margin-top: 120px;
+        justify-content: center;
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+    .B-image{
+        width: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .B-image img {
+        margin-top: 20px;
+    }
+    .line{
+        width: 2px;
+        height: 0;
+        background-color: #122B47;
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        transition: height 0.3s ease-in-out;
+    }
+    .line2{
+        background-color: #213a49;
+       
+    }
+    .B-image:hover .line{
+        height: 450px;
+    }
+    .B-image:hover .line-size {
+        visibility: visible;
+        opacity: 1;
+    }
+    .line-wrap{
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s ease-in-out;
+    }
+    .B-image:hover .line-wrap {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .B-text .line-size{
+        font-size: 32px;
+        color: #122B47;
+        font-weight: bold;
+        position: absolute;
+        bottom: -70px;
+        left: 40%;
+        top: 30%;
+        transform: translateX(-50%);
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s ease-in-out;
+    }
+    .line-size2{
+        font-size: 32px;
+        color: #122B47;
+        font-weight: bold;
+        left: 70%;
+        top: 30%;
+        transform: translateX(-40%);
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s ease-in-out;
+        }
+    .line-size{
+        width:60%;
+        height: 2px;
+        background-color: #122B47;
+        position: absolute;
+        bottom: 95%;
+        left: 20%;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s ease-in-out;
+    }
+    .B-image:hover .line2{
+        visibility: visible;
+        opacity: 1;
+    }
+    .B-image:hover .line-size2 {
+        visibility: visible;
+        opacity: 1;
+    }
+        .main-C{
+            width: 100vw;
+            height: auto;
+            background-color: #ffffff;
+            margin-top: 80px;
+            margin-bottom: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .C-content{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 120px;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .fade-in {
+        opacity: 1;
+        }
+        .C-content img{
+            width: 458px;
+            height: 370px;
+        }
+        .C-text{
+            margin-left: 100px;
+            margin-right: 20px;
+        }
+        .C-text h2{
+            font-size: 28px;
+            color: #122B47;
+        }
+        .C-text p{
+            font-size: 16px;
+            font-weight: 300;
+            color: #474747;
+            line-height: 24px;
+        }
+        footer{
+            background-color: #474747;
+            height: 130px;
+            width: 100vw;
+            margin-top: 260px;
+            font-size: 12px;
+            font-weight: 300;
+            color: #E0E0E0;
+            text-align: center;
+            align-items: center;
+            padding-top: 30px;
+            margin: 0;
+        }
+        footer p {
+            margin-top: 10px;
+        }
+
+
+            </style>
+</head>
+<body>
+            <!--네비게이션-->
+    <header class="header">
+        <div class="gnb">
+            <nav class="menu-right">
+                <h1 class="logo">
+                    <a href="./mainpage.html">HAY</a>
+                </h1>
+                <ul>
+                    <li><a href="./subpage1.html">Products</a></li>
+                    <li><a href="./subpage2.html">Details</a></li>
+                    <li><a href="./subpage3.html">Assemble</a></li>
+                </ul>
+            </nav>
+            <div class="menu-left">
+                <a href="#"><button class="menu-button">Contact</button></a>
+                <div class="menu-left-image">
+                <a href="#"><img src="./image/list.png" alt="" width="40px" height="40px"></a>
+            </div>
+        </div>
+    </header>
+
+            <!--컨텐츠-->
+            <div class="main">
+                <section class="main-A">
+                    <div class="A-image">
+                        <img id="mainImage" src="./image/teodores_black.jpg" alt="" width="424px" height="400px" >
+                        <div class="A-img-wrap">
+                            <a class="img-detail" href="#"><img src="./image/side.jpg" alt="" width="98px" onmouseover="changeImage(this)" onmouseout="restoreImage()" ></a>
+                            <a class="img-detail" href="#"><img src="./image/front.jpg" alt="" width="98px" onmouseover="changeImage(this)" onmouseout="restoreImage()" ></a>
+                            <a class="img-detail" href="#"><img src="./image/side2.jpg" alt="" width="98px" onmouseover="changeImage(this)" onmouseout="restoreImage()" ></a>
+                            <a class="img-detail" href="#"><img src="./image/side3.jpg" alt="" width="98px" onmouseover="changeImage(this)" onmouseout="restoreImage()" ></a>
+                        </div>
+                    </div>
+                    <div class="A-text">
+                        <div class="A-content">
+                            <h2>Series 7 Chair </h2>
+                            <p>보기에도 편하고 앉으면 더 편한 체어</p>
+                        </div>
+
+                        <div class="A-icon-stars" style="margin-top: 36px;" >
+                            <img src="./image/icon/star.png" alt="">
+                            <img src="./image/icon/star.png" alt="">
+                            <img src="./image/icon/star.png" alt="">
+                            <img src="./image/icon/star.png" alt="">
+                            <img src="./image/icon/star-half.png" alt="">
+                        </div>
+
+                        <div class="A-price" style="margin-top: -36px;" >
+                            <h1 style="font-size: 40px; color: #272727;" >159,000원</h1>
+                        </div>
+
+                        <div class="A-color">
+                            <h3>색상 선택</h3>
+                            <ul> 
+                                <a href="#"><li class="color1-selected" style="background-color: #000000;" ></li></a>
+                                <a href="#"><li class="color2" style="background-color: #621912;" ></li></a>
+                                <a href="#"><li class="color3" style="background-color: #fff;" ></li></a>
+                            </ul>
+                        </div>
+
+                        <div class="A-amount">
+                            <h3>상품 개수</h3>
+                            <div class="amount-btn">
+                                <div class="left-btn"><a href="#">-</a></div>
+                                <p>1</p>
+                                <div class="right-btn"><a href="#">+</a></div>
+                            </div>
+                        </div>
+
+                        <div class="A-btns">
+                            <div class="btn-text"><span>주문금액</span><span>159,000원</span></div>
+                            <div class="btn-wrap" >
+                            <a class="btn btn1" href="#">장바구니</a>
+                            <a class="btn btn2" href="#">바로구매</a>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="main-B">
+                    <div class="B-text">
+                        <div>
+                            <div class="B-text-btn">
+                                <h2>제품 세부사항</h2>
+                                <a href="./subpage3.html"><button>조립방법 보기</button></a>
+                            </div>
+                            <p style="font-weight: 300; color: #3d3d3d;" >폭: 39 cm
+                            <br>깊이: 47 cm
+                            <br>높이: 77 cm
+                            <br>시트 폭: 39 cm
+                            <br>시트 깊이: 34 cm
+                            <br>시트 높이: 45 cm</p>
+                        </div>
+                        <div class="B-image" style="margin-left: 120px;" >
+                            <a href="#"><img src="./image/chair_size.png" alt="" width="400px" height="500px"></a>
+                            <div class="line-wrap">
+                            <div class="line2"  ></div>
+                            <p class="line-size">폭:39cm</p></div>
+                            <div class="line-wrap">
+                                <div class="line"></div>
+                                <p class="line-size2" style="margin-left: 50px;" >높이:77cm</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+
+                <section class="main-C">
+                    <div class="C-content 1">
+                        <img src="./image/teodores_black.jpg" alt="">
+                        <div class="C-text">
+                        <h2>시리즈 세븐 체어</h2>
+                        <p>아르네 야콥센이 디자인한 시리즈 7 체어는 <br>
+                            HAY 체어 시리즈 중 가장 유명하며, 현대<br> 
+                            가구 디자인의 역사를 상징하는 제품입니다. </p>
+                        </div>
+                    </div>
+
+                    <div class="C-content 2">
+                        <div class="C-text">
+                        <h2>제품 디테일</h2>
+                        <p style="margin-right: 80px;" >시리즈 7 체어는 9겹으로 이루어진 압축 몰드<br>
+                            베니어로 제작되어 뛰어난 내구성, 그리고 강도<br> 
+                            를 자랑하는 한편 슬림한 형태를 유지합니다.</p>
+                        </div>
+                        <img src="./image/side2.jpg" alt="">
+                    </div>
+
+                    <div class="C-content 3">
+                        <img src="./image/front.jpg" alt="">
+                        <div class="C-text">
+                        <h2>뛰어난 내구성</h2>
+                        <p>시리즈 7체어는 견고한 내구성을 갖춘 동시에 <br>
+                            깔끔한 실루엣과 슬림함을 유지합니다. 레그가<br> 
+                            가장자리 바깥까지 확장되어 쉽게 쌓을 수 있고<br>
+                            쉽게 배치할 수 있습니다.
+                        </p>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+        <!--푸터-->
+        <footer>
+            ©HAY
+            <br><br> 
+            At HAY, everything we make draws from three primary sources<br> 
+            of inspiration: art, architecture, and fashion. We have always paid close attention<br>
+            to and been inspired by our surroundings<br>
+            <p>HAY ApS&nbsp;&nbsp;|&nbsp;&nbsp;Havnen 1, 8700 Horsens, Denmark&nbsp;&nbsp;|&nbsp;&nbsp;+45 3164 6000&nbsp;&nbsp;|&nbsp;&nbsp;Vat nr 26799945</p>
+        </footer>
+
+        <script src="./js.2.js"></script>
+</body>
+</html>

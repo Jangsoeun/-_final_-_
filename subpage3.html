@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서브페이지3</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        *{
+            font-family: 'Pretendard';
+        }
+        
+        .header{
+            width: 100vw;
+            height: 80px;
+            background-color: #fff;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 999;
+        }
+        p { 
+            margin: 0px 0px 0px 0px; line-height: 120%; 
+        }
+        .gnb{
+            display: flex;
+            align-items: center;
+            width: 100vw;
+            justify-content: space-between;
+        }
+        .logo a {
+            margin-left: 64px;
+            text-decoration: none;
+            color: #585858;
+        }
+        .menu-right{
+            display: flex;
+            align-items: center;
+        }
+        .menu-right ul{
+            display: flex;
+            text-decoration: none;
+        }
+        .menu-right li {
+            text-decoration: none;
+            margin-left: 36px;
+            list-style: none;
+        }
+        .menu-right li a{
+            text-decoration: none;
+            font-weight: 400;
+            color: #7F7F7F;
+        }
+        .menu-right li a:hover{
+            color: #33607C;
+        }
+        .menu-left{
+            display: flex;
+            margin-right: 64px;
+            align-items: center;
+        }
+        .menu-button{
+            width: 110px;
+            height: 40px;
+            border-radius: 20px;
+            border: 1px solid #33607C;
+            font-size: 16px;
+            background-color: #fff;
+            margin-right: 24px;
+            color: #33607C;
+        }
+        .menu-button a{
+            text-decoration: none;
+            color: #33607C;
+        }
+        .menu-button:hover{
+            background-color: #33607C;
+            color: #fff;
+            font-weight: 300;
+        }
+        .main{
+            width: 100vw;
+            height: auto;
+            background-color: rgb(255, 255, 255);
+            margin: 0;
+            padding-top: 80px;
+        }
+        .main-A{
+            width: 100vw;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            margin-bottom: 200px;
+        }
+        .main-A h2{
+            font-size: 60px;
+            color: #33607C;
+        }
+        .main-A p{
+            font-size: 18px;
+            font-weight: 400;
+            color: #585858;
+            line-height: 32px;
+        }
+        .A-search{
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            position: relative;
+        }
+        .A-search input{
+            width: 100%;
+            height: 50px;
+            border-radius: 50px;
+            border: 1px solid #E0E0E0;
+            background-color: #f4f4f4;
+            padding-left: 20px;
+        }
+        .A-search img{
+            position: absolute;
+            width: 24px;
+            height: 25px;
+            top: 14px;
+            right: 24px;
+            margin: 0;
+        }
+        .button-wrap{
+            margin-top: 20px
+        }
+        .A-product{
+            width: 80px;
+            height: 30px;
+            border-radius: 20px;
+            border: 1px solid #d0d0d0;
+            background-color: #f5f5f5;
+            margin-right: 12px;
+            color: #33607C;
+            font-weight: 300;
+        }
+        .A-product a{
+            text-decoration: none;
+            color: #33607C;
+        }
+        .A-product:hover{
+            background-color: #33607C;
+            color: #fff;
+            font-weight: 300;
+        }
+        section.main-B{
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        section.main-B.fade-in {
+            opacity: 1;
+        }
+
+        .main-B{
+            width: 100vw;
+            height: 600px;
+            background-color: #f4f4f4;
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 100px;
+        }
+        .main-C{
+            width: 100vw;
+            height: auto;
+            background-color: rgb(254, 254, 254);
+            margin-top: 120px;
+            margin-bottom: 200px;
+            justify-content: center;
+        }
+        .B-part{
+            display: flex;
+            flex-direction: column;
+            margin-top: 80px;
+            margin-bottom: 120px;
+            justify-content: center;
+            align-items: center;
+        }
+        .B-part button{
+            width: 120px;
+            height: 40px;
+            background-color: #e1e1e1;
+            color: #33607C;
+            font-weight: 400;
+            border: 1px solid #cdcdcd;
+            margin-top: 50px;
+            border-radius: 50px;
+        }
+        .B-part button:hover{
+            background-color: #33607C;
+            color: #fff;
+        }
+        .B-part p{
+            font-size: 16px;
+            font-weight: 300;
+            color: #585858;
+            margin-top: 10px;
+        }
+        .B-part h3{
+            font-size: 60px;
+            font-weight: bold;
+            color: #33607C;
+        }
+        .C-text-wrap{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 150px;
+            margin-top: 80px;
+            padding-top: 80px;
+        }
+        .C-text-wrap h1{
+            font-size: 32px;
+            font-weight: bold;
+            color: #33607C;
+        }
+        .C-text-wrap p{
+            font-size: 16px;
+            font-weight: 300;
+            color: #585858;
+        }
+        .C-part1{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .part-wrap{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 80px;
+        }
+        .wrap-text{
+            margin-left: 32px;
+        }
+        .wrap-text h3{
+            font-size: 16px;
+            font-weight: 500;
+            color: #585858;
+            margin-bottom: -2px;
+        }
+        .wrap-text p{
+            font-size: 80px;
+            font-weight: bold;
+            color: #585858;
+            align-items: center;
+            margin-right: 12px;
+        }
+        .wrap-info{
+            display: flex;
+            align-items: center;
+        }
+        .C-part2{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .part-wrap2{
+            display: flex;
+            align-items: center;
+        }
+        .part-wrap3{
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .part-wrap4{
+            display: flex;
+            align-items: center;
+        }
+        .part-block{
+            margin-right: 80px;
+        }
+        .D-assemble{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            margin-bottom: 160px;
+        }
+        .D-info{
+            margin-right: 30px;
+        }
+        .D-image{
+            margin-left: 30px;
+        }
+        .D-text{
+            margin-top: 40px;
+            margin-bottom: 40px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #585858;
+            line-height: 24px;
+        }
+        .number{
+            font-size: 60px;
+            font-weight: bold;
+            color: #33607C;
+        }
+        .D-button{
+            display: flex;
+            flex-direction: row;
+        }
+        .D-info button{
+            width: 100px;
+            height: 40px;
+            margin-right: 12px;
+            border-radius: 20px;
+            border: 1px solid #cdcdcd;
+            color: #33607C;
+            font-weight: 300;
+            background-color: #e1e1e1;
+            display: flex;
+            align-items: center;
+            padding: 12px 12px 12px 12px;
+        }
+        .D-info button:hover{
+            background-color: #33607C;
+            color: #fff;
+        }
+        footer{
+            background-color: #474747;
+            height: 130px;
+            width: 100vw;
+            margin-top: 260px;
+            font-size: 12px;
+            font-weight: 300;
+            color: #E0E0E0;
+            text-align: center;
+            align-items: center;
+            padding-top: 30px;
+            margin: 0;
+        }
+        footer p {
+            margin-top: 10px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+        <!--네비게이션-->
+    <header class="header">
+        <div class="gnb">
+            <nav class="menu-right">
+                <h1 class="logo">
+                    <a href="./mainpage.html">HAY</a>
+                </h1>
+                <ul>
+                    <li><a href="./subpage1.html">Products</a></li>
+                    <li><a href="./subpage2.html">Details</a></li>
+                    <li><a href="./subpage3.html">Assemble</a></li>
+                </ul>
+            </nav>
+            <div class="menu-left">
+                <a href="#"><button class="menu-button">Contact</button></a>
+                <div class="menu-left-image">
+                <a href="#"><img src="./image/list.png" alt="" width="40px" height="40px"></a>
+            </div>
+        </div>
+    </header>
+    
+        <!--컨텐츠-->
+        <div class="main">
+            <section class="main-A">
+                <div>
+                    <h2>조립설명서를 찾아보세요!</h2>
+                    <p>조립설명서는 제품과 함께 포장되어 있습니다. 만약 조립설명서를 찾을 수 없거나 분실하셨다면 HAY 홈페이지에서 구매한<br>
+                        제품을 검색해 보세요! 조립 부품과 조립 설명서를 확인하실 수 있습니다.</p>
+                        <div class="A-search">
+                            <input type="text" placeholder="제품명을 검색하세요."> 
+                            <a href="#"><img class="icon_find" src="./image/icon/find.png" alt=""></a>
+                        </div>
+                    <div class="button-wrap">
+                    <a href="#"><button class="A-product">#의자</button></a>
+                    <button class="A-product">#책상</button>
+                    <button class="A-product">#테이블</button>
+                    <button class="A-product">#조명</button>
+                    <button class="A-product">#식탁</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="main-B">
+                <div class="B-part">
+                    <h3>오드바르 의자는 이렇게 조립해보세요!</h3>
+                    <p>조립설명서는 제품과 함께 포장되어 있습니다.</p>
+                    <p>다음은 오드바르 의자 조립 부품 구성품입니다. 조립 부품과 조립 설명서를 확인하실 수 있습니다.</p>
+                    <button>보러가기</button>
+                </div>
+            </section>
+            <section class="main-C">
+                <div class="C-text-wrap">
+                    <h1>01</h1>
+                    <p>부품구성</p>
+                </div>
+                <div>
+                <div class="C-part1">
+                    <div class="part-wrap">
+                        <a href="#"><img src="./image/bolt1.png" alt="" width="150px" height="150px" ></a>
+                        <div class="wrap-text">
+                        <h3>렌치볼트</h3>
+                        <div class="wrap-info">
+                        <p style="font-size: 32px; font-weight: 300; color: #585858;">x</p>
+                        <p class="amount">1</p></div>
+                        </div>
+                    </div>
+
+                    <div class="part-wrap">
+                        <a href="#"><img src="./image/bolt2.png" alt="" width="100px" height="100px" ></a>
+                        <div class="wrap-text">
+                        <h3>렌치볼트</h3>
+                        <div class="wrap-info">
+                        <p style="font-size: 32px; font-weight: 300; color: #585858;">x</p>
+                        <p class="amount">2</p></div>
+                        </div>
+                    </div>
+
+                    <div class="part-wrap">
+                        <a href="#"><img src="./image/wrench.png" alt="" width="120px" height="120px" ></a>
+                        <div class="wrap-text">
+                        <h3>렌치볼트</h3>
+                        <div class="wrap-info">
+                        <p style="font-size: 32px; font-weight: 300; color: #585858;">x</p>
+                        <p class="amount">1</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="C-part2">
+                  <div class="part-block">
+                    <div class="part-wrap2">
+                        <a href="#"><img src="./image/의자뼈대.png" alt="" width="240px" height="270px" ></a>
+                        <div class="wrap-text">
+                        <h3>의자 뼈대</h3>
+                        <div class="wrap-info">
+                        <p style="font-size: 32px; font-weight: 300; color: #585858;">x</p>
+                        <p class="amount">2</p></div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="part-wrap3">
+                        <a href="#"><img src="./image/의자다리.png" alt="" width="285px" height="100px"></a>
+                        <div class="wrap-text">
+                        <h3>의자 좌판</h3>
+                        <div class="wrap-info">
+                        <p style="font-size: 32px; font-weight: 300; color: #585858;">x</p>
+                        <p class="amount">1</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="part-wrap4">
+                        <a href="#"><img src="./image/좌판.png" alt="" width="374px" height="374px" ></a>
+                        <div class="wrap-text">
+                        <h3>의자 좌판</h3>
+                        <div class="wrap-info">
+                        <p style="font-size: 32px; font-weight: 300; color: #585858;">x</p>
+                        <p class="amount">4</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main-D">
+                <div class="C-text-wrap">
+                    <h1>02</h1>
+                    <p>조립방법</p>
+                </div>
+                <div class="D-assemble">
+                <section class="D-info">
+                    <h2 class="number">1</h2>
+                    <div class="D-text">먼저, 다리를 연결해줄 막대기에 나무로 된 
+                        <br>이음부 8개를 넣어 조립합니다. 그리고 다리
+                        <br>에 뚫린 구멍중에 막힌 구멍에 맞춰줍니다. 
+                        <br>이 과정을 4개의 막대기에 모두 진행합니다.</div>
+        
+                    <div class="D-button">
+                    <button type="button" class="button_back"> <span class="material-symbols-outlined" style="margin-right: 6px;" >arrow_back</span>BACK
+                    </button>
+                    <button type="button" class="button_next" style="padding-left: 16px;" >NEXT<span class="material-symbols-outlined"style="margin-left: 6px;">arrow_forward</span></button>
+                </div>
+            </section>
+
+            <section class="D-image">
+                <img src="./image/assemble/01.jpg" width="710px" height="420px" alt="">
+            </section>
+        </div>
+
+        </div>
+
+        <!--푸터-->
+        <footer>
+            ©HAY
+            <br><br> 
+            At HAY, everything we make draws from three primary sources<br> 
+            of inspiration: art, architecture, and fashion. We have always paid close attention<br>
+            to and been inspired by our surroundings<br>
+            <p>HAY ApS&nbsp;&nbsp;|&nbsp;&nbsp;Havnen 1, 8700 Horsens, Denmark&nbsp;&nbsp;|&nbsp;&nbsp;+45 3164 6000&nbsp;&nbsp;|&nbsp;&nbsp;Vat nr 26799945</p>
+        </footer>
+
+        <script src="./js.3.js"></script>
+
+</body>
+</html>
